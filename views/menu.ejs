@@ -1,0 +1,78 @@
+<!--Main Navigation-->
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+   
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/templatemo-style.css">
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/store.js" async></script>
+    <title>Home</title>
+</head>
+<body>
+    <header class="main-header">
+        <nav class="main-nav nav">
+
+        </nav>
+        <h1 class="band-name band-name-large" style="padding: 50px 0;"><%=data3[0].name%></h1>
+    </header>
+    <p id="demo"></p>
+
+    <script>
+      var cat = JSON.parse('<%-JSON.stringify(data1)%>');
+      var dat = JSON.parse('<%-JSON.stringify(data2)%>');
+    let text1 = "";
+    for (let i = 0; i < cat.length; i++) {
+    var tno=cat[i].category;
+    text1+="<section class='container content-section'>";
+        text1+="<h2 class='section-header'>"+tno+"</h2>";
+        text1+="<div class='shop-items'>";
+            for (let j = 0; j <dat.length ; j++) {
+                if(dat[j].category==cat[i].category){
+                text1+="<div class='shop-item'>";
+                    text1+="<span class='shop-item-title'>"+dat[j].name+"</span>";
+                    text1+=" <img class='shop-item-image' src='Album 1.png'>";
+                    text1+="<div class='shop-item-details'>";
+                        text1+="<i data-star='"+dat[j].rating+"'style='font-size:20px' > </i>";
+                        text1+=" <p class='rating'>"+dat[j].rating+"</p>";
+                        text1+=" </div>";
+                    text1+="<div class='shop-item-details'>";
+                        text1+=" <span class='shop-item-price'>"+dat[j].price+"/-</span>";
+                        text1+=" <button class='btn btn-primary section-btn shop-item-button' style='background-color:#ce3232;' type='button'>ADD TO CART</button>";
+                        text1+=" </div>";
+                        text1+=" </div>";}
+                        else{}
+                    }
+        
+          
+            text1+="</div>";
+            text1+="</section>";
+                    }
+        document.getElementById("demo").innerHTML = text1;
+            </script>
+    
+    <section class="container content-section">
+        <h2 class="section-header">CART</h2>
+        <div class="cart-row">
+            <span class="cart-item cart-header cart-column">ITEM</span>
+            <span class="cart-price cart-header cart-column">PRICE</span>
+            <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+        </div>
+        <div class="cart-items">
+        </div>
+        <div class="cart-total">
+            <strong class="cart-total-title">Total</strong>
+            <span class="cart-total-price">₹0</span>
+        </div>
+        <form action="/json" method="post" style="padding-bottom: 20px;">
+            <button class="btn btn-primary btn-purchase" style="background-color: #ce3232;" type="submit" >PURCHASE</button>
+        </form>
+    </section>
+    
+</body>
+
+</html>
+

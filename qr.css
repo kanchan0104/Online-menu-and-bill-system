@@ -1,0 +1,13 @@
+.col-auto{
+    display: block;
+    margin: auto;
+    width: 33%;
+    border: 1px solid #ccc;
+}
+
+.row{
+    display: flex;
+    margin: 0 auto;
+    width: 100vw;
+    flex-direction: row;
+}

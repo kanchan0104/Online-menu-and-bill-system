@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>OTP for Sign up </title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/templatemo-style.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+    <div class="main">
+    
+        <section class="log-in">
+            <div class="container">
+                <div class="signin-content">
+                    <div class="signin-image">
+                        <figure><img src="images/otp.jpg" alt="sing up image"></figure>
+                        <a href="/stafflogin" class="signup-image-link">I am already member</a>
+                    </div>
+
+                    <div class="signin-form">
+                        <h2 class="form-title">Enter the OTP for verification</h2>
+                        <form action="/staffverification" method="post">
+                          <div class="form-group">
+                            <input class="form-control" type="otp" name="otp" placeholder="OTP"></div>
+                          <!-- <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Create Password"></div> -->
+                          <div class="form-group form-button">
+                            <input type="submit" name="signup" id="signup" class="form-submit section-btn" value="Register"/>
+                        </div>
+                          
+                      </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- JS -->
+    <script>
+        function getParameters() {
+            let urlString = window.location.href;
+            let paramString = urlString.split('?')[1];
+            let params_arr = paramString.split('&');
+            let pair = params_arr[0].split('=');
+            
+            if(pair[1]==="true"){
+                document.querySelector(".exists").innerHTML="<p style='color:red'>Incorrect Username and/or Password!</p>";
+
+            }
+            // alert("Value is:" + u);
+        }
+        getParameters();
+    </script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <!-- <script src="js/main.js"></script> -->
+</body>
+</html>

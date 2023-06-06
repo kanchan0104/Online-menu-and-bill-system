@@ -1,0 +1,52 @@
+<div class="col-6">
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingInput" value="{{this.name}}" placeholder="First Name" name="fname">
+      <label for="floatingInput">First Name</label>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="form-floating mb-3">
+      <input type="tect" class="form-control" id="floatingInput" value="{{this.addr}}" placeholder="Address" name="addr">
+      <label for="floatingInput">Address</label>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingInput" value="{{this.phone}}" placeholder="Phone" name="phone">
+      <label for="floatingInput">Phone</label>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="form-floating mb-3">
+      <input type="password" class="form-control" id="floatingInput" value="{{this.password}}" placeholder="Password" name="password">
+      <label for="floatingInput">Password</label>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="form-floating mb-3"> 
+      
+      <select class="form-control" id="floatingInput" value="{{this.position}}" placeholder="Position" name="position">
+          <option value="Owner">Owner</option>
+          <option value="Manager" >Manager</option>
+          <option value="Menu-Editor">Menu Editor</option>
+          <option value="None">None</option>
+      </select>
+      {{!-- <input type="text" class="form-control" id="floatingInput" value="{{this.position}}" placeholder="Position" name="position"> --}}
+     <label for="floatingInput">Position</label>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="form-floating mb-3">
+      <input type="email" class="form-control" id="floatingInput" value="{{this.email}}" placeholder="Email" name="email">
+      <label for="floatingInput">Email</label>
+    </div>
+  </div>
+  {{!-- <div class="col-12">
+    <div class="form-floating mb-3">
+      <textarea class="form-control" placeholder="Leave a comment here" id="comments" name="comments" style="height: 200px">{{this.comments}}</textarea>
+      <label for="comments">Comments</label>
+    </div>
+  </div> --}}
+  <div class="col-12 d-grid">
+    <button class="section-btn" type="submit">Submit</button>
+  </div>

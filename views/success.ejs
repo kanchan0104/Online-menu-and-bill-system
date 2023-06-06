@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Accept a payment</title>
+    <meta name="description" content="A demo of a payment on Stripe" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/checkout.css" />
+    <link rel="stylesheet" href="css/bill.css" />
+    
+    
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="js/bill.js" defer></script>
+    
+  </head>
+  <body>
+    
+    <div id="invoice-POS">
+    
+        <center id="top">
+          <img src="https://img.icons8.com/carbon-copy/100/000000/checked-checkbox.png" width="125" height="120" style="display: block; border: 0px;" /><br>
+    <h1>Thank You For Your Order!</h1>
+        </center><!--End InvoiceTop
+        
+        <div id="mid">
+          <div class="info">
+            <h2>Contact Info</h2>
+            <p> 
+                Address : street city, state 0000</br>
+                Email   : JohnDoe@gmail.com</br>
+                Phone   : 555-555-5555</br>
+            </p>
+          </div>
+        </div>End Invoice Mid -->
+        
+        <div id="bot">
+    
+            <div id="table">
+                <table class="bill">
+                    <tr class="tabletitle">
+                        <td class="item"><h2>Item</h2></td>
+                        <td class="Hours"><h2>Qty</h2></td>
+                        <td class="Rate"><h2>Sub Total</h2></td>
+                    </tr>
+                </table>
+            </div><!--End Table-->
+
+            <a href="/rating?id=1"><button>Rate Dishes</button></a>
+        </div><!--End InvoiceBot-->
+        <br>
+   
+      </div><!--End Invoice-->
+      <script>
+        var dat=JSON.parse('<%-data%>');
+        var sum=0;
+        for(var i=0;i<Object.keys(dat).length;i++){
+            var node=document.createElement("tr");
+            var ht="<td class='tableitem'><p class='itemtext'>"+dat[i][0]+"</p></td><td class='tableitem'><p class='itemtext'>"+dat[i][2]+"</p></td><td class='tableitem'><p class='itemtext'>"+dat[i][1]*dat[i][2]+"</p></td>";
+            sum+=dat[i][1]*dat[i][2];
+            node.classList.add("service");
+            node.innerHTML=ht;
+            document.querySelector(".bill").appendChild(node);
+        }
+        var node = document.createElement("tr");
+        var ht="<td></td><td class='Rate'><h2>Total</h2></td><td class='payment'><h2>"+sum+"</h2></td>";
+        node.innerHTML=ht;
+        document.querySelector(".bill").appendChild(node);
+    </script>
+    
+    
+  </body>
+</html>

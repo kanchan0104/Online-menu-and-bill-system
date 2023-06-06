@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+    <title>User Feedback</title>
+  </head>
+  <body>
+    <div id="panel" class="panel-container">
+      <strong>How satisfied are you with our dishes <br /> </strong>
+      
+        <p id="demo"></p>
+
+<script>
+let text = "";
+
+for (let i = 0; i < 200; i++) {
+  text += "<div class='ratings-container'>"
+    text += "   <div class='rate'>"
+      text += "    <h1>Chinmay             "+i+"</h1>"
+      text += "    </div>"
+      text += "   <div class='rate'>"
+        text += "    <input type='radio' id='star5' name='rate' value='5' />"
+        text += "   <label for='star5' title='text'>5 stars</label>"
+        text += "   <input type='radio' id='star4' name='rate' value='4' />"
+        text += "   <label for='star4' title='text'>4 stars</label>"
+        text += "  <input type='radio' id='star3' name='rate' value='3' />"
+        text += "  <label for='star3' title='text'>3 stars</label>"
+        text += "  <input type='radio' id='star2' name='rate' value='2' />"
+        text += "  <label for='star2' title='text'>2 stars</label>"
+        text += "  <input type='radio' id='star1' name='rate' value='1' />"
+        text += "  <label for='star1' title='text'>1 star</label>"
+        text += " </div>"
+        text += " </div>"
+      
+  
+    
+}
+
+document.getElementById("demo").innerHTML = text;
+</script>
+     
+      
+     
+      
+      </div>
+    </div>
+    <html>
+
+
+
+
+</html>
+  </body>
+</html>

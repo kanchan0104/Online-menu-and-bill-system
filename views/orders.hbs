@@ -1,0 +1,64 @@
+
+
+
+  <div class="col-6">
+    <h1>Uncompleted Orders</h1>
+  </div>
+
+
+
+<table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Table No</th>
+      <th scope="col">Total Amount</th>
+      <th scope="col">Time</th>
+      <th scope="col" class="text-end">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each rows}}
+    {{#compareStrings this.status "processing"}}
+    <tr>
+      <td>{{this.table_no}}</td>
+      <td>{{this.total_price}}</td>
+      <td>{{this.date}}</td>
+      <td class="text-end">
+        <a href="/orderdetails?id={{this.transaction_id}}" type="button" class="btn btn-light btn-small"><i class="bi bi-pencil"></i>
+          View Order</a>
+        <a href="/prepared?trans_id={{this.transaction_id}}" type="button" class="btn btn-light btn-small"><i class="bi bi-person-x"></i> Prepared</a>
+      </td>
+    </tr>
+    {{/compareStrings}}
+    {{/each}}
+  </tbody>
+</table>
+  <div class="col-6">
+    <h1>Completed Orders</h1>
+  </div>
+<table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Table No</th>
+      <th scope="col">Total Amount</th>
+      <th scope="col">Time</th>
+      <th scope="col" class="text-end">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each rows}}
+    {{#compareStrings this.status "completed"}}
+    <tr>
+      <td>{{this.table_no}}</td>
+      <td>{{this.total_price}}</td>
+      <td>{{this.date}}</td>
+      <td class="text-end">
+        <a href="/orderdetails?id={{this.transaction_id}}" type="button" class="btn btn-light btn-small"><i class="bi bi-pencil"></i>
+          View Order</a>
+      </td>
+    </tr>
+{{/compareStrings}}
+{{/each}}
+
+  </tbody>
+</table>

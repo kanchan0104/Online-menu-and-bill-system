@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Membership</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="main">
+    
+        <section class="log-in">
+            <div class="container">
+                <div class="signin-content">
+                    <div class="signin-image">
+                        <figure><img src="images/resto.jpg" alt="sing up image"></figure>
+                        <a href="/login" class="signuplogin-image-link">Already have an account</a>
+                    </div>
+
+                    <div class="signin-form">
+                        <h2 class="form-title">Restaurant Membership</h2>
+                        <form action="/resto_membership" method="POST" class="membership-form" id="membership-form">
+                            <div class="form-group">
+                                <label for="your_name"><i class="zmdi zmdi-store"></i></i></label>
+                                <input type="text" name="name" id="name" placeholder="Restaurant Name"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="your_address"><i class="zmdi zmdi-home"></i></i></label>
+                                <input type="text" name="address" id="address" placeholder="Restaurant Address"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone_no"><i class="zmdi zmdi-phone"></i></i></i></label>
+                                <input type="text" name="phone_no" id="phone_no" placeholder="Restaurant Phone Number"/>
+                            </div>
+                            
+                            <div class="form-group form-button">
+                                <button type="submit" class="form-submit" >save and continue</button>
+                                <!-- <input type="url" name="membership" id="membership" class="form-submit" onclick="window.location.href = 'resto_owner.html';" value="Save and continue"/> -->
+                            </div>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
